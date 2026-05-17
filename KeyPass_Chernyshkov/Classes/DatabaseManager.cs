@@ -14,7 +14,7 @@ namespace KeyPass_Chernyshkov.Classes
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySql(
-                "server=127.0.0.1;uid=student;pwd=;database=Storage;",
+               "server=127.0.0.1;uid=student;pwd=Asdfg123;database=Storage;",
                 new MySqlServerVersion(new Version(8, 0, 11)));
         }
     }
