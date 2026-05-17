@@ -1,4 +1,4 @@
-﻿using AppKeyPass.Contexts;
+﻿using AppKeyPass.Context;
 using AppKeyPass.Models;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,7 +25,7 @@ namespace AppKeyPass.Pages
             }
         }
 
-        private void Save(object sender, RoutedEventArgs e)
+        private async void Save(object sender, RoutedEventArgs e)
         {
             if (ChangeStorage == null)
             {
@@ -36,7 +36,7 @@ namespace AppKeyPass.Pages
                     Login = tbLogin.Text,
                     Password = tbPassword.Text,
                 };
-                StorageContext.Add(storage);
+                await StorageContext.Add(storage);
             }
             else
             {
@@ -45,8 +45,9 @@ namespace AppKeyPass.Pages
                 ChangeStorage.Login = tbLogin.Text;
                 ChangeStorage.Password = tbPassword.Text;
 
-                StorageContext.Update(ChangeStorage);
+                await StorageContext.Update(ChangeStorage);
             }
+
             MessageBox.Show("Данные сохранены");
             MainWindow.Init.OpenPages(new Pages.Main());
         }

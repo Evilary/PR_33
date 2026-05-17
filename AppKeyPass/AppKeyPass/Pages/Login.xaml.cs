@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using AppKeyPass.Contexts;
+using AppKeyPass.Context;
 
 namespace AppKeyPass.Pages
 {

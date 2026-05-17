@@ -48,7 +48,7 @@ namespace KeyPass_Chernyshkov.Controllers
 
         [Route("add")]
         [HttpPost]
-        public IActionResult Add([FromHeader] string token, [FromForm] Storage storage)
+        public IActionResult Add([FromHeader] string token, [FromBody] Storage storage)
         {
             try
             {
@@ -74,7 +74,7 @@ namespace KeyPass_Chernyshkov.Controllers
 
         [Route("update")]
         [HttpPut]
-        public IActionResult Update([FromHeader] string token, [FromForm] Storage storage)
+        public IActionResult Update([FromHeader] string token, [FromBody] Storage storage)
         {
             try
             {
